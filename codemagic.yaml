@@ -11,11 +11,6 @@ workflows:
       - name: Add signing certificate
         script: |
           set -e # exit on first failed command
-
-      - name: Increment build number
-        script: agvtool new-version -all 1
-      - name: Set up code signing settings on Xcode project
-        script: xcode-project use-profiles
       - name: Build ipa for distribution
         script: xcode-project build-ipa \
                     --workspace "${XCODE_WORKSPACE?}" \
