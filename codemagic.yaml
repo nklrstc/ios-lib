@@ -15,6 +15,7 @@ workflows:
         script: |
           set -e # exit on first failed command
       - name: Build ipa for distribution
-        script: xcode-project build-ipa
+        script: xcode-project build-ipa \
+                    --workspace "${XCODE_WORKSPACE?}"
     artifacts:
       - build/ios/ipa/*.ipa
