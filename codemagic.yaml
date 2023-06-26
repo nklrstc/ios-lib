@@ -1,5 +1,8 @@
 workflows:
   my-workflow:
+    environment:
+      groups:
+        - test
     scripts:
       - name: Run iOS tests
         script: |
